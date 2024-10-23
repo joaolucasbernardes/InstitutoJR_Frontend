@@ -20,7 +20,7 @@ import { ActivatedRoute } from '@angular/router';
     SejaDoadorComponent, 
     SobreJoaoComponent,
     SobreOProjetoComponent,
-    TracadoBackgroundComponent
+    TracadoBackgroundComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -35,7 +35,7 @@ export class HomeComponent {
       if (fragment) this.jumpToSection(fragment);
     });
   }
-
+  
   jumpToSection(section: string | null) {
     if (section) document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
   }

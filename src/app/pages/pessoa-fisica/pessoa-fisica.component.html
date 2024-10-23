@@ -1,114 +1,112 @@
 <app-carousel></app-carousel>
 <app-tracado-background></app-tracado-background>
 <div class="container">
-    <div class="quadro-cadastro">
-        <div class="formulario">
-            <p class="titulo">1. Dados Pessoais</p>
-            <div class="link-pfpj">
-                <span [routerLink]="['/pf']" routerLinkActive="active" class="pf">Pessoa Física</span>
-                <span [routerLink]="['/pj']" routerLinkActive="active" class="pj">Pessoa Jurídica</span>
-            </div>
-            
-            <form #cadastroForm="ngForm">
-                <div class="nome">
-                    <label id="nome">Nome completo</label>
-                    <input type="text" [(ngModel)]="nome" name="nome" id="nome" placeholder="" required />
-                </div>
-
-                <div class="email">
-                    <label id="email">Email</label>
-                    <input type="email" [(ngModel)]="email" name="email" id="email" placeholder="" required />
-                </div>
-
-                <div class="cpf">
-                    <label for="cpf">CPF</label>
-                    <input type="text" [(ngModel)]="cpf" name="cpf" id="cpf" mask="000.000.000-00" required />
-                </div>
-
-                <div class="telefone">
-                    <label for="telefone">Telefone</label>
-                    <input type="text" [(ngModel)]="telefone" name="telefone" id="telefone" mask="(00) 00000-0000" required />
-                </div>
-            </form>
+  <div class="quadro-cadastro">
+    <div class="formulario">
+      <p class="titulo">1. Dados Pessoais</p>
+      <div class="link-pfpj">
+        <span [routerLink]="['/pf']" routerLinkActive="active" class="pf">Pessoa Física</span>
+        <span [routerLink]="['/pj']" routerLinkActive="active" class="pj">Pessoa Jurídica</span>
+      </div>
+      
+      <form #cadastroForm="ngForm">
+        <div class="nome">
+          <label id="nome">Nome completo</label>
+          <input type="text" [(ngModel)]="nome" name="nome" id="nome" placeholder="" required />
         </div>
 
-        <div class="resumo-op">
-            <div class="cabecalho">
-                <p class="p1">Resumo da operação</p>
-                <p class="p2">Toda ajuda é importante</p>
-                <p class="p3">Gostaria de contribuir com as taxas de transação?</p>
-                
-                <div class="checkboxes">
-                    <div>
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="incluirTaxas"
-                        id="simRadio"
-                        [value]="true"
-                        [(ngModel)]="incluirTaxas"
-                        (change)="calcularValores()"
-                        required
-                      />
-                      <label for="simRadio">Sim, desejo incluir as taxas</label>
-                    </div>
-                  
-                    <div>
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="incluirTaxas"
-                        id="naoRadio"
-                        [value]="false"
-                        [(ngModel)]="incluirTaxas"
-                        (change)="calcularValores()"
-                        required
-                      />
-                      <label for="naoRadio">Não quero incluir</label>
-                    </div>
-                  </div>                   
-            </div>
-
-            <div class="valores">
-                <div class="traco"></div>
-                <div class="caixavalores">
-                  <p class="valordoacao">Valor da doação</p>
-                  <p class="valordoacao">{{ formatCurrency(valorDaDoacao) }}</p>
-                </div>
-                <div class="traco"></div>
-                <div class="caixavalores">
-                  <p class="totaldoacao">Total da doação</p>
-                  <p class="totaldoacao">{{ formatCurrency(totalDaDoacao) }}</p>
-                </div>
-              </div>
-              
+        <div class="email">
+          <label id="email">Email</label>
+          <input type="email" [(ngModel)]="email" name="email" id="email" placeholder="" required />
         </div>
+
+        <div class="cpf">
+          <label for="cpf">CPF</label>
+          <input type="text" [(ngModel)]="cpf" name="cpf" id="cpf" mask="000.000.000-00" required />
+        </div>
+
+        <div class="telefone">
+          <label for="telefone">Telefone</label>
+          <input type="text" [(ngModel)]="telefone" name="telefone" id="telefone" mask="(00) 00000-0000" required />
+        </div>
+      </form>
     </div>
-    <div class="caixa-termos">
-        <div class="form-check check-container">
-            <input class="form-check-input" type="checkbox" id="receberInformacoes" [(ngModel)]="aceitoReceberInformacoes">
-            <label class="form-check-label" for="receberInformacoes">
-                Aceito o recebimento de informações do Instituto João Rodrigues
-            </label>
-        </div>
 
-        <div class="form-check check-container">
-            <input class="form-check-input" type="checkbox" id="politicaPrivacidade" [(ngModel)]="aceitoPoliticaPrivacidade" required>
-            <label class="form-check-label" for="politicaPrivacidade">
-                Ao informar meus dados eu concordo com a <a href="" style="color: blue; font-weight: 600;">Política de Privacidade</a>
-            </label>
-        </div>
+    <div class="resumo-op">
+      <div class="cabecalho">
+        <p class="p1">Resumo da operação</p>
+        <p class="p2">Toda ajuda é importante</p>
+        <p class="p3">Gostaria de contribuir com as taxas de transação?</p>
+        
+        <div class="checkboxes">
+          <div>
+            <input
+              class="form-check-input"
+              type="radio"
+              name="incluirTaxas"
+              id="simRadio"
+              [value]="true"
+              [(ngModel)]="incluirTaxas"
+              (change)="calcularValores()"
+              required
+            />
+            <label for="simRadio">Sim, desejo incluir as taxas</label>
+          </div>
+        
+          <div>
+            <input
+              class="form-check-input"
+              type="radio"
+              name="incluirTaxas"
+              id="naoRadio"
+              [value]="false"
+              [(ngModel)]="incluirTaxas"
+              (change)="calcularValores()"
+              required
+            />
+            <label for="naoRadio">Não quero incluir</label>
+          </div>
+        </div>                   
+      </div>
 
-        <div class="btn-container">
-            <button (click)="continuar()" class="btn-continuar btn btn-primary">Continuar</button>
+      <div class="valores">
+        <div class="traco"></div>
+        <div class="caixavalores">
+          <p class="valordoacao">Valor da doação</p>
+          <p class="valordoacao">{{ formatCurrency(valorDaDoacao) }}</p>
         </div>
         <div class="traco"></div>
+        <div class="caixavalores">
+          <p class="totaldoacao">Total da doação</p>
+          <p class="totaldoacao">{{ formatCurrency(totalDaDoacao) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="caixa-termos">
+    <div class="form-check check-container">
+      <input class="form-check-input" type="checkbox" id="receberInformacoes" [(ngModel)]="aceitoReceberInformacoes">
+      <label class="form-check-label" for="receberInformacoes">
+        Aceito o recebimento de informações do Instituto João Rodrigues
+      </label>
     </div>
 
-    <div class="forma-de-contribuicao">
-        <p class="titulo">2. Forma de contribuição</p>
+    <div class="form-check check-container">
+      <input class="form-check-input" type="checkbox" id="politicaPrivacidade" [(ngModel)]="aceitoPoliticaPrivacidade" required>
+      <label class="form-check-label" for="politicaPrivacidade">
+        Ao informar meus dados eu concordo com a <a href="" style="color: blue; font-weight: 600;">Política de Privacidade</a>
+      </label>
     </div>
 
+    <div class="btn-container">
+      <button (click)="continuar()" class="btn-continuar btn btn-primary">Continuar</button>
+    </div>
+    <div class="traco"></div>
+  </div>
+
+  <div class="forma-de-contribuicao">
+    <p class="titulo">2. Forma de contribuição</p>
+  </div>
 </div>
 <app-tracado-background></app-tracado-background>
 

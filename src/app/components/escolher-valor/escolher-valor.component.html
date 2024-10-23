@@ -1,23 +1,8 @@
 <div class="container">
-    <h5>
-        Você pode fazer doações mensais ao Instituto João Rodrigues por meio, depósito em conta, pix ou boleto bancário. 
-        com o valor que desejar e ajude a transformar vidas.
-    </h5>
+    <h5 [innerHTML]="text"></h5>
     <div class="quadro-interno">
         <div class="texto-conta-bancaria">
-            <p class="texto">
-                Dados para contribuição
-                <br>
-                <br>
-                Banco: Banco do Brasil
-                <br>
-                Ag: 2591-7
-                <br>
-                Cc: 59580-2
-                <br>
-                <br>
-                Pix CNPJ: 51.354.717/0001-72
-            </p>
+            <p class="texto" [innerHTML]="conta"></p>
         </div>
 
         <p class="ou">OU</p>
@@ -26,30 +11,30 @@
         <div class="cards-valor">
             <div class="card">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="valor" id="valor1" [value]="50" (change)="onRadioChange($event)">
+                <input class="form-check-input" type="radio" name="valor" id="valor1" [value]="valor1" (change)="onRadioChange($event)">
                 <div>
-                  <label class="form-check-label" for="valor1"><h4>Doe R$50,00</h4></label>
-                  <label class="form-check-label por-dia" for="valor1">R$1,67 por dia</label>
+                  <label class="form-check-label" for="valor1"><h4>Doe R${{valor1}},00</h4></label>
+                  <label class="form-check-label por-dia" for="valor1">R${{valorPorDia1?.toFixed(2)}} por dia</label>
                 </div>
               </div>
             </div>
           
             <div class="card">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="valor" id="valor2" [value]="150" (change)="onRadioChange($event)">
+                <input class="form-check-input" type="radio" name="valor" id="valor2" [value]="valor2" (change)="onRadioChange($event)">
                 <div>
-                  <label class="form-check-label" for="valor2"><h4>Doe R$150,00</h4></label>
-                  <label class="form-check-label por-dia" for="valor2">R$5,00 por dia</label>
+                  <label class="form-check-label" for="valor2"><h4>Doe R${{valor2}},00</h4></label>
+                  <label class="form-check-label por-dia" for="valor2">R${{valorPorDia2?.toFixed(2)}} por dia</label>
                 </div>
               </div>
             </div>
           
             <div class="card">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="valor" id="valor3" [value]="200" (change)="onRadioChange($event)">
+                <input class="form-check-input" type="radio" name="valor" id="valor3" [value]="valor3" (change)="onRadioChange($event)">
                 <div>
-                  <label class="form-check-label" for="valor3"><h4>Doe R$200,00</h4></label>
-                  <label class="form-check-label por-dia" for="valor3">R$6,67 por dia</label>
+                  <label class="form-check-label" for="valor3"><h4>Doe R${{valor3}},00</h4></label>
+                  <label class="form-check-label por-dia" for="valor3">R${{valorPorDia3?.toFixed(2)}} por dia</label>
                 </div>
               </div>
             </div>

@@ -1,16 +1,11 @@
 
 <div class="container-o-instituto">
     <div class="texto-frame-1">
-        <h1>Seja um Doador</h1>
-        <p>
-            Ajude-nos a transformar vidas através da doação. 
-            Sua contribuição apoia um projeto que promove não apenas educação, mas também o desenvolvimento integral de talentos e paixões.
-        </p>
-
-        <p>Nosso compromisso é encontrar os caminhos para levar todos os alunos ao atingimento de suas metas.</p>
+        <h1>{{title}}</h1>
+        <p [innerHTML]="text"></p>
     </div>
 
     <div class="imagem-container-frame-1">
-        <img src="../../../assets/img/familia01.png" alt="foto de familia">
+        <img [src]="image" alt="foto de familia">
     </div>
 </div>

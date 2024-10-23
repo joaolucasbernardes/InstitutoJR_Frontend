@@ -7,9 +7,6 @@ import { ComoDoarComponent } from './pages/como-doar/como-doar.component';
 import { ToTopComponent } from './components/to-top/to-top.component';
 import { FormsModule } from '@angular/forms';
 
-
-
-
 @Component({
     selector: 'app-root',
     standalone: true,

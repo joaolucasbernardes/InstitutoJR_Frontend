@@ -1,12 +1,9 @@
-<!-- PARCEIROS -->
 <div class="parceiros">
     <p class="titulo-parceiros">NOSSOS PARCEIROS E APOIADORES</p>
     <div class="apoiadores">
-        <div class="apoiador"><img src="../../../assets/img/valecard.png" alt="apoiador"></div>
-        <div class="apoiador"><img src="../../../assets/img/valecard.png" alt="apoiador"></div>
-        <div class="apoiador"><img src="../../../assets/img/valecard.png" alt="apoiador"></div>
-        <div class="apoiador"><img src="../../../assets/img/valecard.png" alt="apoiador"></div>
-        <div class="apoiador"><img src="../../../assets/img/valecard.png" alt="apoiador"></div>
-        <div class="apoiador"><img src="../../../assets/img/valecard.png" alt="apoiador"></div>
+      <div class="apoiador" *ngFor="let image of images">
+        <img [src]="image" alt="apoiador">
+      </div>
     </div>
-</div>
+  </div>
+  

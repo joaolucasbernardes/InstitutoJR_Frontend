@@ -1,20 +1,13 @@
-<!-- QUEM FOI JOAO  -->
+<!-- QUEM FOI JOAO -->
 <div class="quem-foi">
-    <h1>Quem foi João Rodrigues</h1>
+    <h1>{{ title }}</h1>
     <div class="corpo-quadro">
-        <div class="foto-joao"><img src="../../../assets/img/joao-rodrigues.jpg" alt="foto joao"></div>
+        <div class="foto-joao">
+            <img [src]="image" alt="foto joao" />
+        </div>
         <div class="texto-quem-foi">
-            <p class="p-quem-foi">
-                João Batista Rodrigues foi sócio fundador e membro do Conselho de Administração da ValeCard, 
-                empresa de meios de pagamentos fundada em Uberlândia. Representa a figura de uma grande liderança, 
-                empreendedora, que sempre buscou a inovação, o desenvolvimento dos negócios e o equilíbrio entre a vida 
-                pessoal e corporativa. 
-            </p>
-            <p class="p-quem-foi">
-                O nome do instituto, João Rodrigues, é uma homenagem do Grupo ValeCard para dar continuidade ao legado 
-                dessa personalidade que nos deixou em 12 de junho de 2022 e, também, contribuir com o desenvolvimento social 
-                de crianças e adolescentes
-            </p>
+            <p class="p-quem-foi">{{ textline1 }}</p>
+            <p class="p-quem-foi">{{ textline2 }}</p>
         </div>
     </div>
 </div>

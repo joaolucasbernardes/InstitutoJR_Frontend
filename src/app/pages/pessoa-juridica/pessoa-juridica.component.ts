@@ -6,8 +6,9 @@ import { CarouselComponent } from '../../components/carousel/carousel.component'
 import { SharedDataService } from '../../services/valor-doacao.service';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { CurrencyPipe, CommonModule } from '@angular/common';
+import { CadastroService } from '../../services/cadastro.service'; // Importa o serviço de cadastro
 
-declare var bootstrap: any; // Declaração do objeto bootstrap
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-pessoa-juridica',
@@ -24,6 +25,7 @@ declare var bootstrap: any; // Declaração do objeto bootstrap
   styleUrls: ['./pessoa-juridica.component.css'],
   providers: [provideNgxMask(), CurrencyPipe],
 })
+
 export class PessoaJuridicaComponent implements OnInit, AfterViewInit {
   nome: string = '';
   email: string = '';
@@ -45,12 +47,15 @@ export class PessoaJuridicaComponent implements OnInit, AfterViewInit {
   constructor(
     private sharedDataService: SharedDataService,
     private currencyPipe: CurrencyPipe,
-    private router: Router
+    private router: Router,
+    private cadastroService: CadastroService // Adiciona o serviço de cadastro
   ) {}
 
   ngOnInit() {
-    this.sharedDataService.currentInputValue.subscribe((value) => (this.inputValue = value));
-    this.calcularValores();
+    this.sharedDataService.currentInputValue.subscribe((value) => {
+      this.inputValue = value;
+      this.calcularValores(); // Calcula os valores de acordo com o valor atualizado
+    });
   }
 
   ngAfterViewInit() {
@@ -88,10 +93,34 @@ export class PessoaJuridicaComponent implements OnInit, AfterViewInit {
       this.showToast('Por favor, marque a caixa dos termos de políticas de privacidade, se concordar.');
       return;
     }
-    this.showToast('Doação concluída com sucesso!', 'success');
-    setTimeout(() => {
-      this.router.navigate(['/comprovante']); // Redireciona para a página inicial após 2 segundos
-    }, 3000);
+
+    const cadastro = {
+      Nome: this.nome,
+      Email: this.email,
+      Telefone: this.telefone,
+      Cnpj: this.cnpj,
+      NomeFantasia: this.nomeFantasia,
+      RazaoSocial: this.razaoSocial,
+      InscricaoEstadual: this.inscricaoEstadual,
+      ValorDaDoacao: this.valorDaDoacao, 
+      TotalDaDoacao: this.totalDaDoacao, 
+      IncluirTaxas: this.incluirTaxas, 
+      AceitaReceberInformacoes: this.aceitoReceberInformacoes,
+      AceitaPoliticaPrivacidade: this.aceitoPoliticaPrivacidade,
+      IsentoInscricaoEstadual: this.isentoInscricaoEstadual
+    };
+
+    this.cadastroService.createCadastroPessoaJuridica(cadastro).subscribe(
+      (response) => {
+        this.showToast('Cadastro realizado com sucesso!', 'success');
+        setTimeout(() => {
+          this.router.navigate(['/comprovante']);
+        }, 3000);
+      },
+      (error) => {
+        this.showToast('Erro ao realizar o cadastro.', 'danger');
+      }
+    );
   }
 
   formatCurrency(value: number): string {
@@ -110,9 +139,7 @@ export class PessoaJuridicaComponent implements OnInit, AfterViewInit {
 
       toastElement.innerHTML = `
         <div class="d-flex">
-          <div class="toast-body">
-            ${message}
-          </div>
+          <div class="toast-body">${message}</div>
           <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
       `;
