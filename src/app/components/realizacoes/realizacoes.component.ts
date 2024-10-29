@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-realizacoes',
@@ -13,9 +14,7 @@ export class RealizacoesComponent {
   numeroEmpregos: number | null = null;
   numeroVoluntarios: number | null = null;
 
-
-  private apiUrl = 'http://localhost:1337/api/realizacaos'; // URL da API Strapi
-
+  private apiUrl = `${environment.strapiBaseUrl}/realizacaos`;
 
   async ngOnInit() {
     await this.loadContent();

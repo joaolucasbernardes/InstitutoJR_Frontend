@@ -7,6 +7,7 @@ import { SharedDataService } from '../../services/valor-doacao.service';
 import { AuthGuard } from '../../guards/auth.guard';
 import { CommonModule } from '@angular/common';
 import axios from 'axios';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-escolher-valor',
@@ -31,8 +32,7 @@ export class EscolherValorComponent implements OnInit {
   valorPorDia2: number | null = null;
   valorPorDia3: number | null = null;
 
-
-  private apiUrl = 'http://instituto-jr-backend.vercel.app/api/escolher-valors'; // URL da API Strapi
+  private apiUrl = `${environment.strapiBaseUrl}/escolher-valors`;
 
   constructor(
     private sharedDataService: SharedDataService,

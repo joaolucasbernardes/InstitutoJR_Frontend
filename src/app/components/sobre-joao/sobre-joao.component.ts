@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-sobre-joao',
@@ -14,7 +15,7 @@ export class SobreJoaoComponent {
   textline2: string = '';
   image: string = '';
 
-  private apiUrl = 'http://localhost:1337/api/sobre-o-joaos'; // URL da API Strapi
+  private apiUrl = `${environment.strapiBaseUrl}/sobre-o-joaos`;
 
   constructor() {}
 
@@ -47,10 +48,10 @@ export class SobreJoaoComponent {
         this.textline2 = data.TextLine2 || '';
         
         if (data.Image && data.Image.url) {
-          this.image = `http://localhost:1337${data.Image.url}`;
+          this.image = `${environment.apiEndpoint}${data.Image.url}`;
         } else {
           console.error('Nenhuma imagem encontrada');
-        }
+        }        
       } else {
         console.error('Nenhum dado encontrado');
       }

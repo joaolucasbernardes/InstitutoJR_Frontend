@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CadastroService {
-  // URL base para o Strapi
-  private pessoaFisicaUrl = 'http://localhost:1337/api/pessoa-fisicas';
-  private pessoaJuridicaUrl = 'http://localhost:1337/api/pessoa-juridicas';
+  // URLs base para Pessoa Física e Jurídica, usando a variável de ambiente
+  private pessoaFisicaUrl = `${environment.strapiBaseUrl}/pessoa-fisicas`;
+  private pessoaJuridicaUrl = `${environment.strapiBaseUrl}/pessoa-juridicas`;
 
   constructor(private http: HttpClient) {}
 

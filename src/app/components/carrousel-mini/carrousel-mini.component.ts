@@ -3,6 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Importa o CommonModule para o uso de NgFor
 import { register as registerSwiperElements } from 'swiper/element/bundle';
 import axios from 'axios';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-carrousel-mini',
@@ -15,8 +16,8 @@ import axios from 'axios';
 export class CarrouselMiniComponent {
   images: string[] = []; // Array para armazenar as URLs das imagens
 
-  private apiUrl = 'http://localhost:1337/api/sobre-o-projetos'; // URL da API Strapi
-
+  private apiUrl = `${environment.strapiBaseUrl}/sobre-o-projetos`;
+  
   constructor() {}
 
   async getSobreOProjetoContent() {
@@ -42,7 +43,7 @@ export class CarrouselMiniComponent {
       if (response && response.data && response.data.length > 0) {
         const data = response.data[0]; // Acessa o primeiro objeto da lista
         if (data.Image && data.Image.length > 0) { // Verifica se há imagens
-            this.images = data.Image.map((img: any) => `http://localhost:1337${img.url}`);
+            this.images = data.Image.map((img: any) => `${environment.apiEndpoint}${img.url}`);
         } else {
             console.error('Nenhuma imagem encontrada');
         }

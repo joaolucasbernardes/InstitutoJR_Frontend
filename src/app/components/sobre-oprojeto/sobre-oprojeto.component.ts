@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CarrouselMiniComponent } from '../carrousel-mini/carrousel-mini.component';
 import axios from 'axios';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class SobreOProjetoComponent {
   text2: string = '';
   text3: string = '';
 
-  private apiUrl = 'http://localhost:1337/api/sobre-o-projetos'; // URL da API Strapi
+  private apiUrl = `${environment.strapiBaseUrl}/sobre-o-projetos`;
 
   constructor() {}
 

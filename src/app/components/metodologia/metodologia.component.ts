@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-metodologia',
@@ -21,7 +22,7 @@ export class MetodologiaComponent {
   textrodape1: string = '';
   textrodape2: string = '';
 
-  private apiUrl = 'http://localhost:1337/api/metodologias'; // URL da API Strapi
+  private apiUrl = `${environment.strapiBaseUrl}/metodologias`;
 
   constructor() {}
 

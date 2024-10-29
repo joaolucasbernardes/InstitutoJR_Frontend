@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import $ from 'jquery'
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-pagamento',
@@ -28,7 +29,7 @@ export class PagamentoComponent implements OnInit {
   }
 
   prepareCheckout(): void {
-    this.http.post('http://localhost:1337/api/prepare-checkout', { /* dados */ }).subscribe((response: any) => {
+    this.http.post(`${environment.strapiBaseUrl}/prepare-checkout`, { /* dados */ }).subscribe((response: any) => {
       this.checkoutId = response.id;
     });
   }
