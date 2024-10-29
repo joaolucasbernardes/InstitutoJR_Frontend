@@ -32,7 +32,7 @@ export class EscolherValorComponent implements OnInit {
   valorPorDia3: number | null = null;
 
 
-  private apiUrl = 'http://localhost:1337/api/escolher-valors'; // URL da API Strapi
+  private apiUrl = 'http://instituto-jr-backend.vercel.app/api/escolher-valors'; // URL da API Strapi
 
   constructor(
     private sharedDataService: SharedDataService,
