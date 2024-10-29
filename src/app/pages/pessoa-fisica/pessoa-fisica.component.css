@@ -228,6 +228,7 @@ form {
 
 .forma-de-contribuicao {
     width: 1024px;
+    height: auto;
 
 
     .titulo {
@@ -237,6 +238,13 @@ form {
         color: blue;
         padding-left: 20px;        
     }
+}
+
+.formulario-cartao{
+    width: 1024px;
+    height: 300px;
+
+    background-color: bisque;
 }
 
 

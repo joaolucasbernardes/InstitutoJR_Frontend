@@ -7,6 +7,7 @@ import { SharedDataService } from '../../services/valor-doacao.service';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { CurrencyPipe, CommonModule } from '@angular/common';
 import { CadastroService } from '../../services/cadastro.service'; // Importa o serviço de cadastro
+import { PagamentoComponent } from '../../components/pagamento/pagamento.component';
 
 declare var bootstrap: any;
 
@@ -20,6 +21,7 @@ declare var bootstrap: any;
     CarouselComponent,
     CommonModule,
     NgxMaskDirective,
+    PagamentoComponent,
   ],
   templateUrl: './pessoa-fisica.component.html',
   styleUrls: ['./pessoa-fisica.component.css'],
