@@ -1,0 +1,331 @@
+/* Estilos Globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Container Principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #D0E9F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    border-radius: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Quadro de Cadastro */
+.quadro-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Formulário */
+.formulario, .resumo-op {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titulo-forma {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 20px;
+    text-align: center;
+    align-self: center;
+}
+
+/* Links Pessoa Física/Jurídica */
+.link-pfpj {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.link-pfpj span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.link-pfpj .pf {
+    background: #E7F7FF;
+    color: #007BFF;
+}
+
+.link-pfpj .pj {
+    background: #F5F5F5;
+    color: #555;
+}
+
+.link-pfpj span:hover {
+    background: #D0E9F0;
+}
+
+/* Estilos do Formulário */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+form .razao-social,
+form .nome-fantasia,
+form .cep {
+    grid-column: span 2;
+}
+
+form label {
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+form input {
+    padding: 12px;
+    font-size: 0.95rem;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+form input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+/* Resumo da Operação */
+.resumo-op {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.resumo-op .cabecalho {
+    text-align: center;
+    line-height: 1.6;
+}
+
+.resumo-op .cabecalho .p1 {
+    color: #007BFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.resumo-op .cabecalho .p2 {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.resumo-op .cabecalho .p3 {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Checkboxes e Radios */
+.checkbox-input[type="checkbox"],
+.radio-input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007BFF;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background-color: #F5F5F5;
+    transition: all 0.3s ease;
+}
+
+.checkbox-input[type="checkbox"]:checked,
+.radio-input[type="radio"]:checked {
+    background-color: #007BFF;
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.checkbox-input[type="checkbox"]:hover,
+.radio-input[type="radio"]:hover {
+    background-color: #D0E9F0;
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Alinhamento e Espaçamento */
+.caixa-termos div,
+.radio-options div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.checkbox-label,
+.radio-options label {
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.check-container {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.checkbox-label:hover,
+.radio-options label:hover {
+    color: #007BFF;
+}
+
+/* Valores */
+.valores {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #F9F9F9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.valores .caixavalores {
+    display: flex;
+    justify-content: space-between;
+}
+
+.valores .totaldoacao {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+/* Caixa de Termos */
+.caixa-termos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.caixa-termos label {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.caixa-termos .btn-continuar {
+    align-self: center;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    background: #007BFF;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.caixa-termos .btn-continuar:hover {
+    background: #0056b3;
+}
+
+/* Media Queries */
+
+/* Telas médias (tablets, até 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .link-pfpj {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .formulario, .resumo-op, .caixa-termos {
+        padding: 15px;
+    }
+
+    .titulo-forma {
+        font-size: 1.5rem;
+    }
+}
+
+/* Telas pequenas (smartphones, até 480px) */
+@media (max-width: 480px) {
+    .container {
+        gap: 20px;
+    }
+
+    .link-pfpj span {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .formulario .titulo-forma, .resumo-op .cabecalho .p1 {
+        font-size: 1.2rem;
+    }
+
+    .formulario, .resumo-op, .caixa-termos {
+        padding: 10px;
+    }
+
+    .incluir-taxa-smartphone {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        gap: 10px;
+        margin: 15px;
+        white-space: nowrap;
+    }
+}

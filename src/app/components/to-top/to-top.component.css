@@ -1,0 +1,41 @@
+.to-top {
+  bottom: 0;
+  cursor: pointer;
+  margin: 0 25px 20px 0;
+  position: fixed;
+  right: 0;
+  opacity: 0; 
+  transition: all 0.2s ease-in-out;
+}
+
+.show-scrollTop {
+  opacity: 1; 
+}
+
+.fa-circle-chevron-up {
+  font-size: 50px;
+  color: #4babc5;
+}
+
+
+@media screen and (max-width: 768px) {
+  .fa-circle-chevron-up {
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.2);
+  }
+  .to-top {
+    margin: 0 10px 15px 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .fa-circle-chevron-up {
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.2);
+  }
+
+  .to-top {
+    margin: 0 10px 70px 0;
+  }
+}

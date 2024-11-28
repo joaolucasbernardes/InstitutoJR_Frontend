@@ -1,0 +1,216 @@
+<app-carousel></app-carousel>
+<app-tracado-background></app-tracado-background>
+
+<div class="container">
+  <div class="quadro-cadastro">
+    <!-- Formulário de Cadastro -->
+    <div class="formulario">
+      <p class="titulo-forma">Dados Pessoais</p>
+      <div class="link-pfpj">
+        <span [routerLink]="['/pf']" routerLinkActive="active" class="pf">Pessoa Física</span>
+        <span [routerLink]="['/pj']" routerLinkActive="active" class="pj">Pessoa Jurídica</span>
+      </div>
+
+      <form #cadastroForm="ngForm">
+        <!-- Campo Nome Completo -->
+        <div class="nome">
+          <label for="nome">Nome completo</label>
+          <input
+            type="text"
+            [(ngModel)]="nome"
+            name="nome"
+            id="nome"
+            placeholder="Digite seu nome"
+            required
+          />
+        </div>
+
+        <!-- Campo Email -->
+        <div class="email">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            id="email"
+            placeholder="Digite seu email"
+            required
+          />
+        </div>
+
+        <!-- Campo CPF -->
+        <div class="cpf">
+          <label for="cpf">CPF</label>
+          <input
+            type="text"
+            [(ngModel)]="cpf"
+            name="cpf"
+            id="cpf"
+            mask="000.000.000-00"
+            placeholder="Digite seu CPF"
+            required
+          />
+        </div>
+
+        <!-- Campo Telefone -->
+        <div class="telefone">
+          <label for="telefone">Telefone</label>
+          <input
+            type="text"
+            [(ngModel)]="telefone"
+            name="telefone"
+            id="telefone"
+            mask="(00) 00000-0000"
+            placeholder="Digite seu telefone"
+            required
+          />
+        </div>
+
+        <!-- Campo CEP -->
+        <div class="endereco">
+          <label for="cep">CEP</label>
+          <input
+            type="text"
+            [(ngModel)]="cep"
+            name="cep"
+            id="cep"
+            mask="00000-000"
+            placeholder="Digite seu CEP"
+            required
+          />
+        </div>
+      </form>
+    </div>
+
+    <!-- Resumo da Operação -->
+    <div class="resumo-op">
+      <div class="cabecalho">
+        <p class="p1">Resumo da operação</p>
+        <p class="p2">Toda ajuda é importante</p>
+        <p class="p3">Gostaria de contribuir com as taxas de transação?</p>
+
+        <div class="radio-options incluir-taxa-smartphone">
+          <div>
+            <input
+              class="radio-input"
+              type="radio"
+              name="incluirTaxas"
+              id="simRadio"
+              [value]="true"
+              [(ngModel)]="incluirTaxas"
+              (change)="calcularValores()"
+              required
+            />
+            <label for="simRadio">Sim, desejo incluir as taxas</label>
+          </div>
+
+          <div>
+            <input
+              class="radio-input"
+              type="radio"
+              name="incluirTaxas"
+              id="naoRadio"
+              [value]="false"
+              [(ngModel)]="incluirTaxas"
+              (change)="calcularValores()"
+              required
+            />
+            <label for="naoRadio">Não quero incluir</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="valores">
+        <div class="traco"></div>
+        <div class="caixavalores">
+          <p class="valordoacao">Valor da doação</p>
+          <p class="valordoacao">{{ formatCurrency(valorDaDoacao) }}</p>
+        </div>
+        <div class="traco"></div>
+        <div class="caixavalores">
+          <p class="totaldoacao">Total da doação</p>
+          <p class="totaldoacao">{{ formatCurrency(totalDaDoacao) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Termos e Forma de Contribuição -->
+  <div class="caixa-termos">
+    
+
+    <div class="titulo-forma">Forma de contribuição</div>
+    <div class="radio-options">
+      <div>
+        <input
+          class="radio-input"
+          type="radio"
+          name="metodoPagamento"
+          id="boletoRadio"
+          [value]="'BOLETO'"
+          [(ngModel)]="metodoPagamento"
+        />
+        <label for="boletoRadio">Boleto</label>
+      </div>
+
+      <div>
+        <input
+          class="radio-input"
+          type="radio"
+          name="metodoPagamento"
+          id="pixRadio"
+          [value]="'PIX'"
+          [(ngModel)]="metodoPagamento"
+        />
+        <label for="pixRadio">Pix</label>
+      </div>
+
+      <div>
+        <input
+          class="radio-input"
+          type="radio"
+          name="metodoPagamento"
+          id="creditCardRadio"
+          [value]="'CREDIT_CARD'"
+          [(ngModel)]="metodoPagamento"
+        />
+        <label for="creditCardRadio">Cartão de Crédito</label>
+      </div>
+    </div>
+
+    <div class="form-check check-container">
+      <input
+        class="checkbox-input"
+        type="checkbox"
+        id="receberInformacoes"
+        [(ngModel)]="aceitoReceberInformacoes"
+      />
+      <label class="checkbox-label aceito" for="receberInformacoes">
+        Aceito o recebimento de informações do Instituto João Rodrigues
+      </label>
+    </div>
+
+    <div class="form-check check-container">
+      <input
+        class="checkbox-input"
+        type="checkbox"
+        id="politicaPrivacidade"
+        [(ngModel)]="aceitoPoliticaPrivacidade"
+        required
+      />
+      <label class="checkbox-label" for="politicaPrivacidade">
+        Ao informar meus dados eu concordo com a
+        <a href="" style="color: blue; font-weight: 600;">Política de Privacidade</a>
+      </label>
+    </div>
+    
+    <div class="btn-container">
+      <button type="button" (click)="pagar()" class="btn-continuar btn btn-primary">
+        CONTRIBUIR
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-tracado-background></app-tracado-background>
+<div id="toastContainer" class="position-fixed start-50 translate-middle-x p-3" style="top: 2%; z-index: 5;"></div>

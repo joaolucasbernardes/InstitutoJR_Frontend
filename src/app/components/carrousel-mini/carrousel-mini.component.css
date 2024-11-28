@@ -1,0 +1,93 @@
+/* Configurações gerais para o swiper */
+swiper-container {
+  max-width: 950px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: none; /* Remove a cor de fundo branco do slide */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Altura fixa para os slides */
+  margin: 0 15px; /* Garante que todas as imagens tenham margem entre si */
+  box-sizing: border-box; /* Garante que a margem não afete o tamanho */
+  padding: 0; /* Remove qualquer padding extra */
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%; /* Garante que a imagem ocupe toda a largura do slide */
+  height: 100%; /* Garante que a imagem ocupe toda a altura do slide */
+  object-fit: cover; /* Faz a imagem cobrir todo o slide mantendo a proporção */
+  margin: 0; /* Remove qualquer margem ao redor da imagem */
+  padding: 0; /* Remove qualquer padding ao redor da imagem */
+}
+
+.append-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.append-buttons button {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #007aff;
+  color: #007aff;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 10px;
+  font-size: 13px;
+}
+
+/* Configuração para o segundo carrossel que aparece em telas menores */
+.mySwiper2 {
+  visibility: hidden;
+  display: none;
+}
+
+/* Estilos responsivos para telas menores */
+@media screen and (max-width: 769px) {
+  .mySwiper {
+    visibility: visible;
+  }
+
+  .mySwiper2 {
+    visibility: hidden;
+    display: none;
+  }
+
+  swiper-container {
+    width: 80vw;
+  }
+  
+  swiper-slide {
+    height: 250px; /* Altura menor em telas pequenas */
+    margin: 0 10px; /* Ajuste o espaçamento entre slides */
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .mySwiper {
+    visibility: hidden;
+    display: none;
+  }
+
+  .mySwiper2 {
+    visibility: visible;
+    display: block;
+  }
+
+  swiper-container {
+    width: 90vw;
+  }
+  
+  swiper-slide {
+    height: 200px; /* Altura ajustada para telas muito pequenas */
+    margin: 0 5px; /* Margem menor para telas pequenas */
+  }
+}

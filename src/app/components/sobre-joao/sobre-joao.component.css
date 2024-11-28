@@ -1,0 +1,167 @@
+/* QUEM FOI JOAO  */
+* {
+    color: white;
+
+    max-height: none;
+}
+
+h1 {
+    font-size: xx-large;
+    text-align: center;
+    padding-top: 20px;
+}
+
+p {
+    font-size: larger;
+    text-align: justify;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.quem-foi {
+    width: 1024px;
+    height: 550px;
+    background-color: #4babc5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.corpo-quadro {
+    width: 950px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.foto-joao img {
+    width: 450px;
+    border-radius: 2%;
+
+    border: 5px solid rgba(0, 0, 0, 0.5);
+}
+
+.texto-quem-foi {
+    width: 450px;
+}
+
+.p-quem-foi {
+    font-size: larger;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.space-background2 { 
+    height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .quem-foi {
+        background-color: #4babc5;
+        width: 100vw;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 30px;
+        padding: 30px 0 30px 0;
+    }
+
+    .corpo-quadro {
+        width: 100%;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 30px;
+    
+    }
+
+    .texto-quem-foi {
+        width: 80vw;
+    }
+
+    .foto-joao img {
+        width: 80vw;
+        border-radius: 2%;
+    
+        border: 5px solid rgba(0, 0, 0, 0.5);
+    }
+
+
+    h1 {
+        font-size: x-large;
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    p {
+        font-size: medium;
+        text-align: justify;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    
+}
+
+@media screen and (max-width: 458px) {
+    .quem-foi {
+        background-color: #4babc5;
+        width: 100vw;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 30px;
+        padding: 30px 0 30px 0;
+    }
+
+    .corpo-quadro {
+        width: 100%;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 30px;
+    
+    }
+
+    .texto-quem-foi {
+        width: 80vw;
+    }
+
+    .foto-joao img {
+        width: 80vw;
+        border-radius: 2%;
+    
+        border: 5px solid rgba(0, 0, 0, 0.5);
+    }
+
+
+    h1 {
+        font-size: x-large;
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    p {
+        font-size: medium;
+        text-align: justify;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+}

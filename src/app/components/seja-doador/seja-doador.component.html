@@ -1,0 +1,24 @@
+<!-- FRAME 2 -->
+<div class="container-seja-doador">
+
+    <div class="imagem-container-frame-2">
+        <img [src]="image" alt="foto de familia">
+    </div>
+
+    <div class="texto-frame-2">
+        <h1>{{ title }}</h1>
+        <p [innerHTML]="content"></p>
+
+        <!-- <h1>Seja um doador</h1>
+        <p>
+            Ajude-nos a transformar vidas através da doação. 
+        </p>
+        <p>
+            Sua contribuição apoia um projeto que promove não apenas educação, mas também o desenvolvimento integral de talentos e paixões.
+        </p> -->
+
+        <div class="btn-container">
+            <button [routerLink]="['/como-doar']" routerLinkActive="active" class="btn-doar btn btn-primary">Quero Doar</button>
+        </div>
+    </div>
+</div>

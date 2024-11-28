@@ -1,0 +1,86 @@
+/* SOBRE O PROJETO */
+.sobre-o-projeto {
+    max-width: 1024px;
+    width: 100%; /* Flexível para ocupar o espaço disponível */
+    background-color: #d0e9f0;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px; /* Espaçamento para manter uma boa estética */
+    box-sizing: border-box; /* Garante que padding não expanda a largura total */
+}
+
+.caixa-texto {
+    width: 100%; /* Flexível para ocupar o espaço máximo */
+    max-width: 950px; /* Máximo de largura */
+    padding: 0 20px; /* Adiciona um pouco de espaçamento interno */
+}
+
+.carousel-fotos {
+    width: 100%; /* Flexível para se ajustar */
+    max-width: 950px; /* Limita a largura máxima */
+    height: auto; /* Altura ajustável conforme o conteúdo */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: xx-large;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-top: 10px;
+}
+
+p {
+    font-size: larger;
+    text-align: justify;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Ajustes para telas menores */
+@media screen and (max-width: 768px) {
+    .sobre-o-projeto {
+        width: 100vw;
+        height: auto;
+        gap: 30px;
+        padding: 30px 0;
+    }
+
+    .caixa-texto {
+        width: 90vw; /* Ajusta para caber na tela menor */
+    }
+
+    h1 {
+        font-size: x-large;
+        padding-bottom: 20px;
+    }
+    
+    p {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .sobre-o-projeto {
+        width: 100vw;
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .caixa-texto {
+        width: 90vw; /* Ajuste para tela pequena */
+    }
+
+    h1 {
+        font-size: x-large;
+    }
+    
+    p {
+        font-size: medium;
+    }
+}

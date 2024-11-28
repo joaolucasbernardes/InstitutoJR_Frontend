@@ -1,0 +1,30 @@
+<swiper-container 
+  class="mySwiper" 
+  slides-per-view="2" 
+  centered-slides="false" 
+  space-between="30" 
+  pagination="true"
+  pagination-type="fraction" 
+  navigation="true"
+>
+  
+  <swiper-slide *ngFor="let image of images">
+    <img [src]="image" alt="Imagem do projeto">
+  </swiper-slide>
+  
+</swiper-container>
+
+<swiper-container 
+  class="mySwiper2" 
+  slides-per-view="1" 
+  centered-slides="false" 
+  space-between="30" 
+  pagination="true"
+  navigation="false"
+>
+
+<swiper-slide *ngFor="let image of images">
+  <img [src]="image" alt="Imagem do projeto">
+</swiper-slide>
+  
+</swiper-container>

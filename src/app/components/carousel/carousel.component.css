@@ -1,0 +1,30 @@
+.carousel {
+    width: 1024px;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 493px; 
+    object-fit: cover; 
+  }
+  
+  @media screen and (max-width: 768px) {
+    .carousel {
+      width: 100vw;
+    }
+  
+    .carousel-item img {
+      height: auto; 
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .carousel {
+      width: 100vw;
+    }
+  
+    .carousel-item img {
+      height: auto;
+    }
+  }
+  

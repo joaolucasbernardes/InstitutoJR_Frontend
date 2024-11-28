@@ -1,0 +1,295 @@
+/* METODOLOGIA */
+* {
+    color: white;
+}
+
+h1 {
+    font-size: xx-large;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.container-metodologia {
+    width: 1024px;
+    height: 650px;
+    background-color: #4babc5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sub-titulo-metodologia {
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.cards {
+    width: 950px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card1 {
+    width: 250px;
+    height: 300px;
+    background-color: #2399b8;
+    box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2);
+    
+
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
+}
+
+.icone-card {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.textos-card {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.texto-card {
+    font-size: small;
+    font-weight: 300;
+    text-align: center;
+}
+
+.container-rodape {
+    width: 950px;
+    height: 120px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.texto-rodape {
+    font-size: larger;
+    font-weight: 300;
+    text-align: justify;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: x-large;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    
+    .container-metodologia {
+        background-color: #4babc5;
+        width: 100vw;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 30px;
+        padding: 30px 0 30px 0;
+    }
+    
+    .sub-titulo-metodologia {
+        font-size: medium;
+        font-weight: 500;
+        text-align: center;
+    }
+    
+    .cards {
+        width: 100%;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+
+    }
+    
+    .card1 {
+        width: 80vw;
+        height: 100%;
+        background-color: #2399b8;
+        box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2);
+        
+    
+        border-radius: 20px;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+    
+    .icone-card {
+        width: 100px;
+        height: 100px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+    
+    .textos-card {
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+    
+    .texto-card {
+        font-size: small;
+        font-weight: 300;
+        text-align: center;
+    }
+    
+    .container-rodape {
+        width: 80vw;
+        height: auto;
+
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .texto-rodape {
+        font-size: medium;
+        font-weight: 300;
+        text-align: justify;
+    }
+
+    .cabecalho-metodologia{
+        width: 80vw;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    h1 {
+        font-size: x-large;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    
+    .container-metodologia {
+        background-color: #4babc5;
+        width: 100vw;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 30px;
+        padding: 30px 0 30px 0;
+    }
+    
+    .sub-titulo-metodologia {
+        font-size: medium;
+        font-weight: 500;
+        text-align: center;
+    }
+    
+    .cards {
+        width: 100%;
+        height: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 40px;
+
+
+    }
+    
+    .card1 {
+        width: 80vw;
+        height: 100%;
+        background-color: #2399b8;
+        box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2);
+        
+    
+        border-radius: 20px;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+    
+    .icone-card {
+        width: 100px;
+        height: 100px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+    
+    .textos-card {
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+    
+    .texto-card {
+        font-size: small;
+        font-weight: 300;
+        text-align: center;
+    }
+    
+    .container-rodape {
+        width: 80vw;
+        height: auto;
+
+        padding-top: 30px;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .texto-rodape {
+        font-size: medium;
+        font-weight: 300;
+        text-align: justify;
+    }
+
+    .cabecalho-metodologia{
+        width: 80vw;
+    }
+
+}

@@ -1,0 +1,251 @@
+<app-carousel></app-carousel>
+<app-tracado-background></app-tracado-background>
+
+<div class="container">
+  <div class="quadro-cadastro">
+    <!-- Formulário de Cadastro -->
+    <div class="formulario">
+      <p class="titulo-forma">Dados Empresariais</p>
+      <div class="link-pfpj">
+        <span [routerLink]="['/pf']" routerLinkActive="active" class="pf">Pessoa Física</span>
+        <span [routerLink]="['/pj']" routerLinkActive="active" class="pj">Pessoa Jurídica</span>
+      </div>
+
+      <form #cadastroForm="ngForm">
+        <!-- Campo Razão Social -->
+        <div class="razao-social">
+          <label for="razao-social">Razão Social</label>
+          <input
+            type="text"
+            [(ngModel)]="razaoSocial"
+            name="razaoSocial"
+            id="razao-social"
+            placeholder="Digite a razão social"
+            required
+          />
+        </div>
+
+        <!-- Campo Nome Fantasia -->
+        <div class="nome-fantasia">
+          <label for="nome-fantasia">Nome Fantasia</label>
+          <input
+            type="text"
+            [(ngModel)]="nomeFantasia"
+            name="nomeFantasia"
+            id="nome-fantasia"
+            placeholder="Digite o nome fantasia"
+            required
+          />
+        </div>
+
+        <!-- Campo Email -->
+        <div class="email">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            id="email"
+            placeholder="Digite o email"
+            required
+          />
+        </div>
+
+        <!-- Campo Telefone -->
+        <div class="telefone">
+          <label for="telefone">Telefone</label>
+          <input
+            type="text"
+            [(ngModel)]="telefone"
+            name="telefone"
+            id="telefone"
+            mask="(00) 00000-0000"
+            placeholder="Digite o telefone"
+            required
+          />
+        </div>
+
+        <!-- Campo CNPJ -->
+        <div class="cnpj">
+          <label for="cnpj">CNPJ</label>
+          <input
+            type="text"
+            [(ngModel)]="cnpj"
+            name="cnpj"
+            id="cnpj"
+            mask="00.000.000/0000-00"
+            placeholder="Digite o CNPJ"
+            required
+          />
+        </div>
+
+        <!-- Campo Inscrição Estadual -->
+        <div class="inscricao-estadual">
+          <label for="inscricao-estadual">Inscrição Estadual</label>
+          <input
+            type="text"
+            [(ngModel)]="inscricaoEstadual"
+            name="inscricaoEstadual"
+            id="inscricao-estadual"
+            placeholder="Digite a inscrição estadual (se houver)"
+          />
+        </div>
+
+        <!-- Campo CEP -->
+        <div class="cep">
+          <label for="cep">CEP</label>
+          <input
+            type="text"
+            [(ngModel)]="cep"
+            name="cep"
+            id="cep"
+            mask="00000-000"
+            placeholder="Digite o CEP"
+            required
+          />
+        </div>
+      </form>
+    </div>
+
+    <!-- Resumo da Operação -->
+    <div class="resumo-op">
+      <div class="cabecalho">
+        <p class="p1">Resumo da operação</p>
+        <p class="p2">Toda ajuda é importante</p>
+        <p class="p3">Gostaria de contribuir com as taxas de transação?</p>
+
+        <div class="radio-options incluir-taxa-smartphone">
+          <div>
+            <input
+              class="radio-input"
+              type="radio"
+              name="incluirTaxas"
+              id="simRadio"
+              [value]="true"
+              [(ngModel)]="incluirTaxas"
+              (change)="calcularValores()"
+              required
+            />
+            <label for="simRadio">Sim, desejo incluir as taxas</label>
+          </div>
+
+          <div>
+            <input
+              class="radio-input"
+              type="radio"
+              name="incluirTaxas"
+              id="naoRadio"
+              [value]="false"
+              [(ngModel)]="incluirTaxas"
+              (change)="calcularValores()"
+              required
+            />
+            <label for="naoRadio">Não quero incluir</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="valores">
+        <div class="traco"></div>
+        <div class="caixavalores">
+          <p class="valordoacao">Valor da doação</p>
+          <p class="valordoacao">{{ formatCurrency(valorDaDoacao) }}</p>
+        </div>
+        <div class="traco"></div>
+        <div class="caixavalores">
+          <p class="totaldoacao">Total da doação</p>
+          <p class="totaldoacao">{{ formatCurrency(totalDaDoacao) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Termos e Forma de Contribuição -->
+  <div class="caixa-termos">
+    <div class="titulo-forma">Forma de contribuição</div>
+    <div class="radio-options">
+      <div>
+        <input
+          class="radio-input"
+          type="radio"
+          name="metodoPagamento"
+          id="boletoRadio"
+          [value]="'BOLETO'"
+          [(ngModel)]="metodoPagamento"
+        />
+        <label for="boletoRadio">Boleto</label>
+      </div>
+
+      <div>
+        <input
+          class="radio-input"
+          type="radio"
+          name="metodoPagamento"
+          id="pixRadio"
+          [value]="'PIX'"
+          [(ngModel)]="metodoPagamento"
+        />
+        <label for="pixRadio">Pix</label>
+      </div>
+
+      <div>
+        <input
+          class="radio-input"
+          type="radio"
+          name="metodoPagamento"
+          id="creditCardRadio"
+          [value]="'CREDIT_CARD'"
+          [(ngModel)]="metodoPagamento"
+        />
+        <label for="creditCardRadio">Cartão de Crédito</label>
+      </div>
+    </div>
+
+    <div class="form-check check-container">
+      <input
+        class="checkbox-input"
+        type="checkbox"
+        id="isentoInscricaoEstadual"
+        [(ngModel)]="isentoInscricaoEstadual"
+      />
+      <label class="checkbox-label" for="isentoInscricaoEstadual">
+        Isento de Inscrição Estadual
+      </label>
+    </div>
+
+    <div class="form-check check-container">
+      <input
+        class="checkbox-input"
+        type="checkbox"
+        id="receberInformacoes"
+        [(ngModel)]="aceitoReceberInformacoes"
+      />
+      <label class="checkbox-label" for="receberInformacoes">
+        Aceito o recebimento de informações do Instituto João Rodrigues
+      </label>
+    </div>
+
+    <div class="form-check check-container">
+      <input
+        class="checkbox-input"
+        type="checkbox"
+        id="politicaPrivacidade"
+        [(ngModel)]="aceitoPoliticaPrivacidade"
+        required
+      />
+      <label class="checkbox-label" for="politicaPrivacidade">
+        Ao informar meus dados eu concordo com a
+        <a href="" style="color: blue; font-weight: 600;">Política de Privacidade</a>
+      </label>
+    </div>
+
+    <div class="btn-container">
+      <button type="button" (click)="pagar()" class="btn-continuar btn btn-primary">
+        CONTRIBUIR
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-tracado-background></app-tracado-background>
+<div id="toastContainer" class="position-fixed start-50 translate-middle-x p-3" style="top: 2%; z-index: 5;"></div>

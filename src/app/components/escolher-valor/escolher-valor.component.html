@@ -1,0 +1,79 @@
+<div class="container">
+    <h5 [innerHTML]="text"></h5>
+    <div class="quadro-interno">
+        <div class="texto-conta-bancaria">
+            <p class="texto" [innerHTML]="conta"></p>
+        </div>
+
+
+
+        <div class="cards-valor">
+            <div class="card">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="valor" id="valor1" [value]="valor1" (change)="onRadioChange($event)">
+                <div>
+                  <label class="form-check-label" for="valor1"><h4>Doe R${{valor1}},00</h4></label>
+                  <label class="form-check-label por-dia" for="valor1">R${{valorPorDia1?.toFixed(2)}} por dia</label>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="valor" id="valor2" [value]="valor2" (change)="onRadioChange($event)">
+                <div>
+                  <label class="form-check-label" for="valor2"><h4>Doe R${{valor2}},00</h4></label>
+                  <label class="form-check-label por-dia" for="valor2">R${{valorPorDia2?.toFixed(2)}} por dia</label>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="valor" id="valor3" [value]="valor3" (change)="onRadioChange($event)">
+                <div>
+                  <label class="form-check-label" for="valor3"><h4>Doe R${{valor3}},00</h4></label>
+                  <label class="form-check-label por-dia" for="valor3">R${{valorPorDia3?.toFixed(2)}} por dia</label>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="form-check">
+                <input 
+                  class="form-check-input" 
+                  type="radio" 
+                  name="valor" 
+                  id="valor4"
+                  [value]="'custom'" 
+                  (change)="onRadioChange($event)"
+                >
+                <div>
+                  <label class="form-check-label" for="valor4"><h4>Doe outro valor</h4></label>
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="formGroupExampleInput" 
+                    placeholder="Digite o valor" 
+                    [(ngModel)]="inputValue" 
+                    (input)="onInputChange($event)" 
+                    mask="separator.2" 
+                    prefix="R$ " 
+                    suffix=",00"
+                    thousandSeparator="." decimalMarker="," allowNegative="false"
+                    [disabled]="!radioSelected"
+                  >
+                </div>
+              </div>
+            </div>
+          
+            <div class="btn-container">
+              <button 
+                (click)="validarEscolha()" 
+                class="btn-doar btn btn-primary" 
+                [disabled]="!radioSelected && valor === null && (inputValue === null || inputValue <= 0)"
+              >Doar</button>
+            </div>
+          </div>  
+    </div>
+</div>
