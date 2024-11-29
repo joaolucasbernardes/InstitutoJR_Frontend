@@ -310,8 +310,22 @@ form input:focus {
     }
 
     form {
+        display: grid;
         grid-template-columns: 1fr;
-        gap: 10px;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        align-items: center;
+    }
+    
+
+    form .email,
+    form .telefone,
+    form .cnpj,
+    form .inscricao-estadual,
+    form .razao-social,
+    form .nome-fantasia,
+    form .cep {
+        grid-column: span 2;
     }
 
     .formulario .titulo-forma, .resumo-op .cabecalho .p1 {
