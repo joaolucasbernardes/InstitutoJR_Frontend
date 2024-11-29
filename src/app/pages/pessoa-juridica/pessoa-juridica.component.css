@@ -162,6 +162,8 @@ form input:focus {
 .checkbox-input[type="checkbox"],
 .radio-input[type="radio"] {
     appearance: none;
+    min-width: 20px;
+    min-height: 20px;
     width: 20px;
     height: 20px;
     border: 2px solid #007BFF;
@@ -181,7 +183,7 @@ form input:focus {
 
 .checkbox-input[type="checkbox"]:hover,
 .radio-input[type="radio"]:hover {
-    background-color: #D0E9F0;
+    background-color: #007BFF;
     border-color: #007BFF;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
