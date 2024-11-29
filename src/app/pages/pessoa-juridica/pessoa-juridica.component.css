@@ -78,13 +78,14 @@ body {
 }
 
 .link-pfpj .pf {
-    background: #E7F7FF;
-    color: #007BFF;
+    background: #F5F5F5;
+    color: #555;
+    
 }
 
 .link-pfpj .pj {
-    background: #F5F5F5;
-    color: #555;
+    background: #E7F7FF;
+    color: #007BFF;
 }
 
 .link-pfpj span:hover {
