@@ -16,7 +16,7 @@ export interface PaymentData {
   providedIn: 'root',
 })
 export class PaymentService {
-  private apiUrl = 'http://localhost:1337/api/payments'; // Endpoint do backend
+  private apiUrl = 'https://institutojrbackend-production.up.railway.app/api/payments'; // Endpoint do backend
 
   constructor(private http: HttpClient) {}
 
