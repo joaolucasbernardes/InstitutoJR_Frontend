@@ -78,10 +78,13 @@ export class PessoaJuridicaComponent implements OnInit, AfterViewInit {
   }
 
   calcularValores() {
-    // Calcula os valores de doação com ou sem as taxas de transação
     this.valorDaDoacao = this.inputValue;
-    this.totalDaDoacao = this.incluirTaxas ? this.valorDaDoacao * 1.0199 : this.valorDaDoacao;
-  }
+    if (this.incluirTaxas) {
+      this.totalDaDoacao = (this.valorDaDoacao * 1.0299) + 0.49; // Aplica 2,99% e adiciona R$0,49
+    } else {
+      this.totalDaDoacao = this.valorDaDoacao; 
+    }
+  } 
 
   pagar() {
     // Validação do formulário antes de prosseguir com o pagamento
