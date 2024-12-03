@@ -80,7 +80,7 @@ export class PessoaFisicaComponent implements OnInit, AfterViewInit {
       name: this.nome,
       email: this.email,
       cpfCnpj: this.cpf.replace(/\D/g, ''), // Remove a máscara do CPF/CNPJ
-      phone: this.telefone.replace(/\D/g, ''), // Remove a máscara do telefone
+      mobilePhone: this.telefone.replace(/\D/g, ''), // Remove a máscara do telefone
       postalCode: this.cep,
     };
 

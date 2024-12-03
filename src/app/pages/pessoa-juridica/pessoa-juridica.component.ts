@@ -94,7 +94,7 @@ export class PessoaJuridicaComponent implements OnInit, AfterViewInit {
       name: this.razaoSocial,
       email: this.email,
       cpfCnpj: this.cnpj.replace(/\D/g, ''), // Remove a máscara do CNPJ
-      phone: this.telefone.replace(/\D/g, ''), // Remove a máscara do telefone
+      mobilePhone: this.telefone.replace(/\D/g, ''), // Remove a máscara do telefone
       postalCode: this.cep, // Inclui o CEP no payload
     };
 
