@@ -1,10 +1,13 @@
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+<div *ngIf="isLoading" class="skeleton-container">
+  <div class="skeleton-texto-frame"></div>
+</div>
+
+<div *ngIf="!isLoading && images.length > 0" id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active" *ngFor="let image of images">
-      <img [src]="image" class="d-block w-100" alt="img1">
+    <div *ngFor="let image of images; let i = index" class="carousel-item" [class.active]="i === 0">
+      <img [src]="image" class="d-block w-100" alt="img{{ i + 1 }}">
     </div>
   </div>
-
 
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -14,4 +17,8 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+
+<div *ngIf="!isLoading && images.length === 0" class="no-images">
+  <p>Nenhuma imagem disponível.</p>
 </div>

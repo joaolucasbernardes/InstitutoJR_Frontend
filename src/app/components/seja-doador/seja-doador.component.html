@@ -1,5 +1,16 @@
+<!-- Skeleton Loader -->
+<div *ngIf="isLoading" class="skeleton-container">
+    <div class="skeleton-texto-frame">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-paragraph"></div>
+        <div class="skeleton-paragraph"></div>
+    </div>
+    <div class="skeleton-imagem-container"></div>
+</div>
+
+
 <!-- FRAME 2 -->
-<div class="container-seja-doador">
+<div *ngIf="!isLoading" class="container-seja-doador">
 
     <div class="imagem-container-frame-2">
         <img [src]="image" alt="foto de familia">

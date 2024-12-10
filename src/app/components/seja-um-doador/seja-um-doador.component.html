@@ -1,5 +1,15 @@
+<!-- Skeleton Loader -->
+<div *ngIf="isLoading" class="skeleton-container">
+    <div class="skeleton-texto-frame">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-paragraph"></div>
+        <div class="skeleton-paragraph"></div>
+    </div>
+    <div class="skeleton-imagem-container"></div>
+</div>
 
-<div class="container-o-instituto">
+
+<div *ngIf="!isLoading" class="container-o-instituto">
     <div class="texto-frame-1">
         <h1>{{title}}</h1>
         <p [innerHTML]="text"></p>

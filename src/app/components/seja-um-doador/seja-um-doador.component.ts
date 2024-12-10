@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
 import { environment } from '../../../environments/environment';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-seja-um-doador',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './seja-um-doador.component.html',
   styleUrl: './seja-um-doador.component.css'
 })
@@ -13,6 +14,8 @@ export class SejaUmDoadorComponent {
   title: string = '';
   text: string = '';
   image: string = '';
+  isLoading: boolean = true;
+
 
   private apiUrl = `${environment.strapiBaseUrl}/seja-um-doador-como-doars`;
 
@@ -33,10 +36,8 @@ export class SejaUmDoadorComponent {
   }
 
   async loadContent() {
-    console.log('Tentando carregar o conteúdo...');
     try {
       const response = await this.getSejaDoadorContent();
-      console.log('Resposta do Strapi:', response); // Log da resposta para verificar os dados
 
       if (response && response.data && response.data.length > 0) {
         const data = response.data[0];
@@ -53,6 +54,8 @@ export class SejaUmDoadorComponent {
       }
     } catch (error) {
       console.error('Erro ao carregar dados do Strapi:', error);
+    } finally {
+      this.isLoading = false; // Oculta o skeleton após o carregamento
     }
   }
 

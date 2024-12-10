@@ -1,4 +1,11 @@
-<swiper-container 
+  <div *ngIf="isLoading" class="skeleton-carousel-fotos">
+    <div class="skeleton-image"></div>
+    <div class="skeleton-image"></div>
+  </div>
+
+
+<swiper-container
+  *ngIf="!isLoading" 
   class="mySwiper" 
   slides-per-view="2" 
   centered-slides="false" 
@@ -14,7 +21,8 @@
   
 </swiper-container>
 
-<swiper-container 
+<swiper-container
+  *ngIf="!isLoading" 
   class="mySwiper2" 
   slides-per-view="1" 
   centered-slides="false" 

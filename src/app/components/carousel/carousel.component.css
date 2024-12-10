@@ -28,3 +28,48 @@
     }
   }
   
+
+
+  
+
+/* Skeleton Container */
+.skeleton-container {
+  width: 1024px;
+  height: 493px;
+  background-color: #d0e9f0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  animation: pulse 1.5s infinite ease-in-out; /* Adicionando animação */
+}
+
+/* Animação do Skeleton */
+@keyframes pulse {
+  0% {
+    background-color: #4babc5;
+  }
+  50% {
+    background-color: #4b90a2;
+  }
+  100% {
+    background-color: #4babc5;
+  }
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .skeleton-container {
+      flex-direction: column;
+      width: 100vw;
+      height: auto;
+      padding: 30px 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .skeleton-container {
+      gap: 20px;
+  }
+}

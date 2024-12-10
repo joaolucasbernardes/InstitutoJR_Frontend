@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface PaymentData {
   billingType: 'BOLETO' | 'PIX' | 'CREDIT_CARD';
@@ -16,7 +17,7 @@ export interface PaymentData {
   providedIn: 'root',
 })
 export class PaymentService {
-  private apiUrl = 'https://institutojrbackend-production.up.railway.app/api/payments'; // Endpoint do backend
+  private apiUrl = `${environment.apiEndpoint}/api/payments`; // Endpoint do backend
 
   constructor(private http: HttpClient) {}
 

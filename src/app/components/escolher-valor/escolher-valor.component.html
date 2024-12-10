@@ -1,4 +1,24 @@
-<div class="container">
+<!-- Skeleton Loader -->
+<div *ngIf="isLoading" class="skeleton-container">
+  <div class="skeleton-text">
+    <div class="skeleton-title"></div>
+    <div class="skeleton-paragraph"></div>
+    <div class="skeleton-paragraph"></div>
+  </div>
+
+  <div class="skeleton-cards">
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-button"></div>
+  </div>
+</div>
+
+
+
+
+<div *ngIf="!isLoading" class="container">
     <h5 [innerHTML]="text"></h5>
     <div class="quadro-interno">
         <div class="texto-conta-bancaria">

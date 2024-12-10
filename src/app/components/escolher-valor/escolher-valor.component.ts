@@ -22,6 +22,9 @@ export class EscolherValorComponent implements OnInit {
   inputValue: number | null = null;
   radioSelected: boolean = false;
 
+  isLoading: boolean = true;
+
+
   text: string = '';
   conta: string = '';
   valor1: number | null = null;
@@ -58,10 +61,8 @@ export class EscolherValorComponent implements OnInit {
   }
 
   async loadContent() {
-    console.log('Tentando carregar o conteúdo...');
     try {
       const response = await this.getEscolherValorContent();
-      console.log('Resposta do Strapi:', response); // Log da resposta para verificar os dados
 
       if (response && response.data && response.data.length > 0) {
         const data = response.data[0];
@@ -85,6 +86,8 @@ export class EscolherValorComponent implements OnInit {
       }
     } catch (error) {
       console.error('Erro ao carregar dados do Strapi:', error);
+    } finally {
+      this.isLoading = false; // Oculta o skeleton após o carregamento
     }
   }
 

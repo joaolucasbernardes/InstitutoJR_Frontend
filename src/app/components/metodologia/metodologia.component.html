@@ -1,5 +1,44 @@
+<div *ngIf="isLoading" class="skeleton-container-metodologia">
+    <div class="skeleton-cabecalho-metodologia">
+      <div class="skeleton-title"></div>
+      <div class="skeleton-subtitle"></div>
+    </div>
+  
+    <div class="skeleton-cards">
+      <div class="skeleton-card">
+        <div class="skeleton-icon"></div>
+        <div class="skeleton-text-group">
+          <div class="skeleton-card-title"></div>
+          <div class="skeleton-card-paragraph"></div>
+        </div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skeleton-icon"></div>
+        <div class="skeleton-text-group">
+          <div class="skeleton-card-title"></div>
+          <div class="skeleton-card-paragraph"></div>
+        </div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skeleton-icon"></div>
+        <div class="skeleton-text-group">
+          <div class="skeleton-card-title"></div>
+          <div class="skeleton-card-paragraph"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="skeleton-container-rodape">
+      <div class="skeleton-paragraph"></div>
+      <div class="skeleton-paragraph"></div>
+    </div>
+  </div>
+  
+
+
+
 <!-- METODOLOGIA -->
-<div class="container-metodologia">
+<div *ngIf="!isLoading" class="container-metodologia">
     <div class="cabecalho-metodologia">
         <h1>{{ title }}</h1>
         <p class="sub-titulo-metodologia">{{textline1}}</p>

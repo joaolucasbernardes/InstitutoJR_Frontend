@@ -15,6 +15,8 @@ import { environment } from '../../../environments/environment';
 })
 export class CarrouselMiniComponent {
   images: string[] = []; // Array para armazenar as URLs das imagens
+  isLoading: boolean = true; 
+
 
   private apiUrl = `${environment.strapiBaseUrl}/sobre-o-projetos`;
   
@@ -35,10 +37,8 @@ export class CarrouselMiniComponent {
   }
 
   async loadContent() {
-    console.log('Tentando carregar o conteúdo...');
     try {
       const response = await this.getSobreOProjetoContent();
-      console.log('Resposta do Strapi:', response); // Log da resposta
   
       if (response && response.data && response.data.length > 0) {
         const data = response.data[0]; // Acessa o primeiro objeto da lista
@@ -52,6 +52,8 @@ export class CarrouselMiniComponent {
       }
     } catch (error) {
       console.error('Erro ao carregar dados do Strapi:', error);
+    } finally {
+      this.isLoading = false; // Oculta o skeleton após o carregamento
     }
   }
 }

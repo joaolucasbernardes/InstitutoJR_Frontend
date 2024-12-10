@@ -1,4 +1,16 @@
-<div class="parceiros">
+<div *ngIf="isLoading" class="skeleton-parceiros">
+  <div class="skeleton-titulo-parceiros"></div>
+  <div class="skeleton-apoiadores">
+    <div class="skeleton-apoiador"></div>
+    <div class="skeleton-apoiador"></div>
+    <div class="skeleton-apoiador"></div>
+    <div class="skeleton-apoiador"></div>
+  </div>
+</div>
+
+
+
+<div *ngIf="!isLoading" class="parceiros">
     <p class="titulo-parceiros">NOSSOS PARCEIROS E APOIADORES</p>
     <div class="apoiadores">
       <div class="apoiador" *ngFor="let image of images">

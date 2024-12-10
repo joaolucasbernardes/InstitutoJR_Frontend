@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class CadastroService {
-  // URLs base para Pessoa Física e Jurídica, usando a variável de ambiente
+  
   private pessoaFisicaUrl = `${environment.strapiBaseUrl}/pessoa-fisicas`;
   private pessoaJuridicaUrl = `${environment.strapiBaseUrl}/pessoa-juridicas`;
 

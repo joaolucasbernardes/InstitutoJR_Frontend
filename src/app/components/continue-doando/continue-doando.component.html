@@ -1,10 +1,25 @@
-<div class="container">
-    <div class="foto">
-        <img src="../../../assets/img/menina.jpg" alt="foto de uma menina escrevendo">
+<!-- Skeleton Loader -->
+<div *ngIf="isLoading" class="skeleton-container">
+    <div class="skeleton-foto"></div>
+    <div class="skeleton-textos">
+      <div class="skeleton-title"></div>
+      <div class="skeleton-paragraph"></div>
+      <div class="skeleton-paragraph"></div>
+      <div class="skeleton-logo"></div>
     </div>
+  </div>
+  
+
+
+<div *ngIf="!isLoading" class="container">
+    <div class="foto">
+        <img [src]="image1" alt="Foto carregada do Strapi">
+    </div>
+
     <div class="textos">
         <p class="cr1"[innerHTML]="paragrafo1"></p>
         <p [innerHTML]="paragrafo2"></p>
-        <img src="../../../assets/img/logobranca.png" alt="logo joao rodrigues branca">
+        <img [src]="image2" alt="Logo carregada do Strapi">
+
     </div>
 </div>

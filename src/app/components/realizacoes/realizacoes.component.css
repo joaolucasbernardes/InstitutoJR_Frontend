@@ -7,6 +7,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    max-width: none;
+
 }
 
 .infos{
@@ -62,3 +64,128 @@ i {
         justify-content: space-evenly;
     }
 }
+
+
+
+
+
+
+
+
+
+/* Skeleton Container */
+.skeleton-container {
+    width: 1024px;
+    height: 300px;
+    background-color: #d0e9f0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  .skeleton-text{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* Skeleton Infos */
+  .skeleton-infos {
+    width: 150px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .skeleton-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-title {
+    width: 60px;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-paragraph {
+    width: 100px;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  /* Skeleton Animation */
+  @keyframes pulse {
+    0% {
+      background-color: #4babc5;
+    }
+    50% {
+      background-color: #4b90a2;
+    }
+    100% {
+      background-color: #4babc5;
+    }
+  }
+  
+  /* Responsiveness */
+  @media screen and (max-width: 768px) {
+    .skeleton-container {
+      width: 100vw;
+      height: 300px;
+      flex-direction: row;
+      gap: 20px;
+    }
+    .skeleton-infos {
+      width: 120px;
+      height: 280px;
+    }
+    .skeleton-icon {
+      width: 60px;
+      height: 60px;
+    }
+    .skeleton-title {
+      width: 50px;
+    }
+    .skeleton-paragraph {
+      width: 80px;
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .skeleton-container {
+      flex-direction: column;
+      width: 100vw;
+      height: 750px;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    .skeleton-infos {
+      width: 100px;
+      height: 250px;
+    }
+    .skeleton-icon {
+      width: 50px;
+      height: 50px;
+    }
+    .skeleton-title {
+      width: 40px;
+      height: 25px;
+    }
+    .skeleton-paragraph {
+      width: 70px;
+      height: 15px;
+    }
+  }
+  

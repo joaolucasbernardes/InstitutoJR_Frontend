@@ -10,6 +10,8 @@ import { Component, HostListener, Inject } from '@angular/core';
 })
 export class ToTopComponent {
 
+  // TO-TOP-BUTTON
+
   private readonly SCROLL_THRESHOLD = 100;
 
   constructor(@Inject(DOCUMENT) private document: Document) {}

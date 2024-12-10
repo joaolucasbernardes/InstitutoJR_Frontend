@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
 import { environment } from '../../../environments/environment';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-metodologia',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './metodologia.component.html',
   styleUrl: './metodologia.component.css'
 })
 export class MetodologiaComponent {
+
+  isLoading: boolean = true; 
 
   title: string = '';
   textline1: string = '';
@@ -41,10 +44,8 @@ export class MetodologiaComponent {
   }
 
   async loadContent() {
-    console.log('Tentando carregar o conteúdo...');
     try {
       const response = await this.getMetodologiaContent();
-      console.log('Resposta do Strapi:', response); // Log da resposta
   
       if (response && response.data && response.data.length > 0) {
         const data = response.data[0]; 
@@ -63,6 +64,8 @@ export class MetodologiaComponent {
       }
     } catch (error) {
       console.error('Erro ao carregar dados do Strapi:', error);
+    } finally {
+      this.isLoading = false; // Oculta o skeleton após o carregamento
     }
 }
 }

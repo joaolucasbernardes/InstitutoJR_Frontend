@@ -1,5 +1,18 @@
+<!-- Skeleton Loader -->
+<div *ngIf="isLoading" class="skeleton-quem-foi">
+    <div class="skeleton-title"></div>
+    <div class="skeleton-corpo-quadro">
+      <div class="skeleton-foto"></div>
+      <div class="skeleton-texto">
+        <div class="skeleton-paragraph"></div>
+        <div class="skeleton-paragraph"></div>
+        <div class="skeleton-paragraph"></div>
+      </div>
+    </div>
+  </div>
+  
 <!-- QUEM FOI JOAO -->
-<div class="quem-foi">
+<div *ngIf="!isLoading" class="quem-foi">
     <h1>{{ title }}</h1>
     <div class="corpo-quadro">
         <div class="foto-joao">

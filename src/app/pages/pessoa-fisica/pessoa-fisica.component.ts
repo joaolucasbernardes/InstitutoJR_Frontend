@@ -99,6 +99,9 @@ export class PessoaFisicaComponent implements OnInit, AfterViewInit {
 
     const requestBody = { customerData, paymentData };
 
+    localStorage.removeItem('accessAllowed');
+    localStorage.removeItem('inputValue'); 
+
     this.paymentService.createPayment(requestBody).subscribe(
       (response) => {
         if (response.invoiceUrl) {

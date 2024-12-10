@@ -12,6 +12,7 @@ import { environment } from '../../../environments/environment';
 })
 export class ParceirosComponent {
   images: string[] = []; // Array para armazenar URLs de imagens
+  isLoading: boolean = true;
 
   private apiUrl = `${environment.strapiBaseUrl}/parceiros`;
 
@@ -32,10 +33,8 @@ export class ParceirosComponent {
   }
 
   async loadContent() {
-    console.log('Tentando carregar o conteúdo...');
     try {
       const response = await this.getParceirosContent();
-      console.log('Resposta do Strapi:', response); // Log da resposta
 
       if (response && response.data && response.data.length > 0) {
         const data = response.data[0]; // Acessa o primeiro objeto da lista
@@ -43,7 +42,6 @@ export class ParceirosComponent {
         if (data.Image && data.Image.length > 0) { // Verifica se há imagens
           // Mapeia as URLs das imagens
           this.images = data.Image.map((img: any) => `${environment.apiEndpoint}${img.url}`);
-          console.log('URLs das imagens:', this.images); // Verifica as URLs geradas
         } else {
           console.error('Nenhuma imagem encontrada');
         }
@@ -52,6 +50,8 @@ export class ParceirosComponent {
       }
     } catch (error) {
       console.error('Erro ao carregar dados do Strapi:', error);
+    } finally {
+      this.isLoading = true; 
     }
   }
 }

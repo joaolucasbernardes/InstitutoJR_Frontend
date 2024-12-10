@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
 import { environment } from '../../../environments/environment';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-o-instituto',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './o-instituto.component.html',
   styleUrl: './o-instituto.component.css'
 })
@@ -13,6 +14,8 @@ export class OInstitutoComponent {
   title: string = '';
   content: string = '';
   image: string = '';
+  isLoading: boolean = true; // Variável de controle para exibir o skeleton
+
 
   private apiUrl = `${environment.strapiBaseUrl}/o-institutos`;
 
@@ -33,10 +36,8 @@ export class OInstitutoComponent {
   }
 
   async loadContent() {
-    console.log('Tentando carregar o conteúdo...');
     try {
       const response = await this.getOInstitutoContent();
-      console.log('Resposta do Strapi:', response); // Log da resposta
   
       if (response && response.data && response.data.length > 0) {
         const data = response.data[0]; // Acessa o primeiro objeto da lista
@@ -52,6 +53,8 @@ export class OInstitutoComponent {
       }
     } catch (error) {
       console.error('Erro ao carregar dados do Strapi:', error);
+    } finally {
+      this.isLoading = false; // Oculta o skeleton após o carregamento
     }
 }
 }

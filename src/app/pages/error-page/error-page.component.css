@@ -1,0 +1,103 @@
+/* Container Principal */
+.error-page-container {
+  width: 1024px;
+  height: 100vh;
+  background-color: #4babc5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px; /* Para evitar corte em telas menores */
+  box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+/* Conteúdo Centralizado */
+.error-content {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: #6fbcd1;
+}
+
+/* Título */
+.error-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Mensagem */
+.error-content p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* Botão de Retry */
+.retry-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4babc5;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #3a94a1;
+}
+
+/* Responsividade para tablets */
+@media screen and (max-width: 768px) {
+
+  .error-page-container {
+    width: 100vw;
+  }
+  .error-content h1 {
+    font-size: 2rem;
+  }
+
+  .error-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .retry-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 450px) {
+
+
+
+  .error-content {
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .error-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .error-content p {
+    font-size: 0.9rem;
+  }
+
+  .retry-button {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}

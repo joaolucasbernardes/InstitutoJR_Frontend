@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
 import { environment } from '../../../environments/environment';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sobre-joao',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './sobre-joao.component.html',
   styleUrls: ['./sobre-joao.component.css']
 })
@@ -14,6 +15,8 @@ export class SobreJoaoComponent {
   textline1: string = '';
   textline2: string = '';
   image: string = '';
+  isLoading: boolean = true; // Variável de controle para exibir o skeleton
+
 
   private apiUrl = `${environment.strapiBaseUrl}/sobre-o-joaos`;
 
@@ -34,10 +37,8 @@ export class SobreJoaoComponent {
   }
 
   async loadContent() {
-    console.log('Tentando carregar o conteúdo...');
     try {
       const response = await this.getSobreJoaoContent();
-      console.log('Resposta do Strapi:', response); // Log da resposta para verificar os dados
 
       if (response && response.data && response.data.length > 0) {
         const data = response.data[0];
@@ -57,6 +58,8 @@ export class SobreJoaoComponent {
       }
     } catch (error) {
       console.error('Erro ao carregar dados do Strapi:', error);
+    } finally {
+      this.isLoading = false; // Oculta o skeleton após o carregamento
     }
   }
 }

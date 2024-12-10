@@ -1,32 +1,22 @@
-<!-- FRAME 1 -->
-
-<div class="container-o-instituto" id="o-instituto">
-    <div class="texto-frame-1">
-        <h1>{{ title }}</h1>
-        <p [innerHTML]="content"></p>
+<!-- Skeleton Loader -->
+<div *ngIf="isLoading" class="skeleton-container">
+    <div class="skeleton-texto-frame">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-paragraph"></div>
+        <div class="skeleton-paragraph"></div>
     </div>
-
-    <div class="imagem-container-frame-1">
-        <img [src]="image" alt="foto de familia">
-    </div>
+    <div class="skeleton-imagem-container"></div>
 </div>
-
-
-<!-- <div class="container-o-instituto" id="o-instituto">
- <div class="texto-frame-1">
-        <h1>O Instituto João Rodrigues</h1>
-        <p>
-            O instituto tem como missão impulsionar o percurso educacional de crianças e jovens, guiando-os com dedicação 
-            até que atinjam o marco do primeiro emprego.
-        </p>
-        <p>
-            Este projeto não é apenas uma jornada educativa, mas um ponto de partida para diversas possibilidades, não apenas 
-            no campo acadêmico, mas também para explorar territórios como esportes, artes e muito mais, proporcionando um apoio 
-            integral ao desenvolvimento de talentos e paixões.
-        </p>
+  
+  <!-- Conteúdo Real -->
+  <div *ngIf="!isLoading" class="container-o-instituto" id="o-instituto">
+    <div class="texto-frame-1">
+      <h1>{{ title }}</h1>
+      <p [innerHTML]="content"></p>
     </div>
-
+  
     <div class="imagem-container-frame-1">
-        <img src="../../../assets/img/familia01.png" alt="foto de familia">
+      <img [src]="image" alt="foto de família">
     </div>
-</div> -->
+  </div>
+  

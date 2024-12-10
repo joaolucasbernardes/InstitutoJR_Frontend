@@ -1,4 +1,35 @@
-<div class="container">
+<!-- Skeleton Loader -->
+<div *ngIf="isLoading" class="skeleton-container">
+    <div class="skeleton-infos">
+      <div class="skeleton-icon"></div>
+      <div class="skeleton-text">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-paragraph"></div>
+      </div>
+    </div>
+  
+    <div class="skeleton-infos">
+      <div class="skeleton-icon"></div>
+      <div class="skeleton-text">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-paragraph"></div>
+      </div>
+    </div>
+  
+    <div class="skeleton-infos">
+      <div class="skeleton-icon"></div>
+      <div class="skeleton-text">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-paragraph"></div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+<div *ngIf="!isLoading" class="container">
     <div class="infos">
         <i class="fa-solid fa-hand-holding-heart"></i>
         <div>Mais de <h1>{{numeroAlunoBeneficiado}}</h1> alunos <br> beneficiados</div>

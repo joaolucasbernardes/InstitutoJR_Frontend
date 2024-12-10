@@ -3,17 +3,18 @@ import { RouterLink } from '@angular/router';
 
 import axios from 'axios';
 import { environment } from '../../../environments/environment';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-seja-doador',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './seja-doador.component.html',
   styleUrl: './seja-doador.component.css'
 })
 export class SejaDoadorComponent {
-
+  isLoading: boolean = true;
   title: string = '';
   content: string = '';
   image: string = '';
@@ -37,10 +38,8 @@ export class SejaDoadorComponent {
   }
 
   async loadContent() {
-    console.log('Tentando carregar o conteúdo...');
     try {
       const response = await this.getSejaUmDoadorHomeContent();
-      console.log('Resposta do Strapi:', response); // Log da resposta
   
       if (response && response.data && response.data.length > 0) {
         const data = response.data[0]; // Acessa o primeiro objeto da lista
@@ -56,6 +55,8 @@ export class SejaDoadorComponent {
       }
     } catch (error) {
       console.error('Erro ao carregar dados do Strapi:', error);
+    }  finally {
+      this.isLoading = false; // Oculta o skeleton após o carregamento
     }
 }
 

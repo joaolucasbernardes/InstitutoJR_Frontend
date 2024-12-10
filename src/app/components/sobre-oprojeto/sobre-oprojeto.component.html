@@ -1,5 +1,21 @@
+<div *ngIf="isLoading" class="skeleton-sobre-o-projeto">
+    <div class="skeleton-caixa-texto">
+      <div class="skeleton-title"></div>
+      <div class="skeleton-paragraph"></div>
+      <div class="skeleton-paragraph"></div>
+      <div class="skeleton-paragraph"></div>
+    </div>
+  
+    <div class="skeleton-carousel-fotos">
+      <div class="skeleton-image"></div>
+      <div class="skeleton-image"></div>
+    </div>
+  </div>
+  
+  
+
 <!-- SOBRE O PROJETO -->
-<div class="sobre-o-projeto">
+<div *ngIf="!isLoading" class="sobre-o-projeto">
     <div class="caixa-texto">
         <h1>{{title}}</h1>
         <p class="texto-sobre">
