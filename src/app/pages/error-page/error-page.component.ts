@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-error-page',
@@ -8,7 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './error-page.component.css'
 })
 export class ErrorPageComponent {
+
+  constructor(private router: Router) {}
+
   retry() {
-    window.location.reload();
+    this.router.navigate(['/']);
   }
 }
