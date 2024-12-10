@@ -161,7 +161,7 @@ export class PessoaFisicaComponent implements OnInit, AfterViewInit {
   }
 
   formatCurrency(value: number): string {
-    return this.currencyPipe.transform(value, 'BRL', 'symbol', '1.2-2') ?? '';
+    return this.currencyPipe.transform(value, 'BRL', 'symbol', '1.2-2', 'pt-BR') ?? '';
   }
 
   showToast(message: string, type: string = 'danger') {

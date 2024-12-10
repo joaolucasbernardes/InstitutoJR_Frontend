@@ -21,6 +21,8 @@ export class EscolherValorComponent implements OnInit {
   valor: number | null = null;
   inputValue: number | null = null;
   radioSelected: boolean = false;
+  radioSelectedValue: string | null = null; // Adiciona essa variável
+
 
   isLoading: boolean = true;
 
@@ -104,6 +106,8 @@ export class EscolherValorComponent implements OnInit {
 
   onRadioChange(event: any) {
     const selectedValue = event.target.value;
+    this.radioSelectedValue = selectedValue;
+  
     if (selectedValue === 'custom') {
       this.valor = null;
       this.inputValue = null;
@@ -114,6 +118,7 @@ export class EscolherValorComponent implements OnInit {
       this.radioSelected = true;
     }
   }
+
 
   validarEscolha() {
     const valorFinal = this.valor !== null ? this.valor : this.inputValue;

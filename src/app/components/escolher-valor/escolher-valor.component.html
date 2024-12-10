@@ -70,18 +70,20 @@
                 >
                 <div>
                   <label class="form-check-label" for="valor4"><h4>Doe outro valor</h4></label>
-                  <input 
-                    type="text" 
-                    class="form-control" 
-                    id="formGroupExampleInput" 
-                    placeholder="Digite o valor" 
-                    [(ngModel)]="inputValue" 
-                    (input)="onInputChange($event)" 
-                    mask="separator.2" 
-                    prefix="R$ " 
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="formGroupExampleInput"
+                    placeholder="Digite o valor"
+                    [(ngModel)]="inputValue"
+                    (input)="onInputChange($event)"
+                    mask="separator.2"
+                    prefix="R$ "
                     suffix=",00"
-                    thousandSeparator="." decimalMarker="," allowNegative="false"
-                    [disabled]="!radioSelected"
+                    thousandSeparator="."
+                    decimalMarker=","
+                    allowNegative="false"
+                    [disabled]="radioSelectedValue !== 'custom'"
                   >
                 </div>
               </div>
