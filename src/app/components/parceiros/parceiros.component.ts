@@ -51,7 +51,7 @@ export class ParceirosComponent {
     } catch (error) {
       console.error('Erro ao carregar dados do Strapi:', error);
     } finally {
-      this.isLoading = true; 
+      this.isLoading = false; 
     }
   }
 }
