@@ -154,6 +154,8 @@ form input:focus {
     font-size: 0.95rem;
 }
 
+
+
 /* Checkboxes e Radios */
 .checkbox-input[type="checkbox"],
 .radio-input[type="radio"] {
@@ -183,6 +185,8 @@ form input:focus {
     border-color: #007BFF;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
+
+
 
 /* Alinhamento e Espaçamento */
 .caixa-termos div,
@@ -294,6 +298,39 @@ form input:focus {
     .titulo-forma {
         font-size: 1.5rem;
     }
+
+
+
+
+    /* Checkboxes e Radios */
+    .checkbox-input[type="checkbox"],
+    .radio-input[type="radio"] {
+        appearance: auto;
+        min-width: 20px;
+        min-height: 20px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #007BFF;
+        border-radius: none;
+        outline: none;
+        cursor: pointer;
+        background-color: #F5F5F5;
+        transition: all 0.3s ease;
+    }
+
+    .checkbox-input[type="checkbox"]:checked,
+    .radio-input[type="radio"]:checked {
+        background-color: #007BFF;
+        border-color: #0056b3;
+        box-shadow: none;
+    }
+
+    .checkbox-input[type="checkbox"]:hover,
+    .radio-input[type="radio"]:hover {
+        background-color: #F5F5F5;
+        border-color: #007BFF;
+        box-shadow: none;
+    }
 }
 
 /* Telas pequenas (smartphones, até 480px) */
@@ -341,6 +378,8 @@ form input:focus {
         /* Evita quebra de linha */
         white-space: nowrap;
     }
-    
 
+    .caixa-termos{
+        align-items: center;
+    }
 }
