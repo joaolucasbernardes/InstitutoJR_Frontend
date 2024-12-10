@@ -34,7 +34,7 @@ export class PessoaFisicaComponent implements OnInit, AfterViewInit {
   valorDaDoacao: number = 0;
   totalDaDoacao: number = 0;
   incluirTaxas: boolean | null = null;
-  metodoPagamento: 'BOLETO' | 'PIX' | 'CREDIT_CARD' = 'CREDIT_CARD';
+  metodoPagamento: 'BOLETO' | 'PIX' | 'CREDIT_CARD' = 'BOLETO';
   aceitoReceberInformacoes: boolean = false;
   aceitoPoliticaPrivacidade: boolean = false;
   cep: string = '';

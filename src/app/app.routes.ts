@@ -6,6 +6,7 @@ import { PessoaFisicaComponent } from './pages/pessoa-fisica/pessoa-fisica.compo
 import { AuthGuard } from './guards/auth.guard';
 import { ComprovanteDeDoacaoComponent } from './pages/comprovante-de-doacao/coomprovante-de-doacao.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { PoliticaPrivacidadeComponent } from './pages/politica-privacidade/politica-privacidade.component';
 
 
 export const routes: Routes = [
@@ -15,4 +16,5 @@ export const routes: Routes = [
     { path: 'pj', component: PessoaJuridicaComponent, canActivate: [AuthGuard] },
     { path: 'comprovante', component: ComprovanteDeDoacaoComponent, canActivate: [AuthGuard] },
     { path: 'error', component: ErrorPageComponent },
+    { path: 'politica-privacidade', component: PoliticaPrivacidadeComponent },
 ];
